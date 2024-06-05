@@ -26,6 +26,7 @@ const ContactForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sendEmail = (e: any) => {
     e.preventDefault();
+    console.log("hello");
 
     emailjs
       .send(
