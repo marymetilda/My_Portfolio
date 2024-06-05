@@ -28,9 +28,6 @@ const words = [
 function Home() {
   const navigate = useNavigate();
   const [shouldShowName, setShouldShowName] = useState("");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const navigationEntry: any =
-    window.performance.getEntriesByType("navigation")[0];
 
   const handleAbout = () => {
     navigate("/about");
@@ -46,31 +43,17 @@ function Home() {
   };
 
   useEffect(() => {
-    // const shouldHideMenu = sessionStorage.getItem("shouldHideMenu");
-    // if (navigationEntry.type === "reload" && navigationEntry !== "navigate") {
-    //   setShouldShowName("");
-    //   sessionStorage.removeItem("shouldHideMenu");
-    // } else if (navigationEntry !== "navigate") {
-    //   sessionStorage.setItem("shouldHideMenu", "yes");
-    //   setShouldShowName(shouldHideMenu || "");
-    // } else {
-    //   setShouldShowName("");
-    //   sessionStorage.removeItem("shouldHideMenu");
-    // }
-
     const shouldHideMenu = sessionStorage.getItem("shouldHideMenu");
-    // set shouldHideMenu to the state that helps to toggle visibility of the menu
     setShouldShowName(shouldHideMenu || "");
 
     const timeout = setTimeout(() => {
       if (!shouldHideMenu) {
         sessionStorage.setItem("shouldHideMenu", "yes");
-        setShouldShowName("yes");
       }
     }, 3000);
 
     return () => clearTimeout(timeout);
-  }, [navigationEntry]);
+  }, []);
 
   const GradientBar = () => (
     <div className="relative z-10 h-12 w-4 block">
