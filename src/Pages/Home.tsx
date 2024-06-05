@@ -49,6 +49,7 @@ function Home() {
     const timeout = setTimeout(() => {
       if (!shouldHideMenu) {
         sessionStorage.setItem("shouldHideMenu", "yes");
+        setShouldShowName("yes");
       }
     }, 3000);
 
