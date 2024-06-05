@@ -10,6 +10,8 @@ module.exports = {
           "linear-gradient(180deg, #004040 0%, #ffffff 50%, #004040 100%)",
         "linear-blue-white":
           "linear-gradient(200deg, #ffffff 0%, #004040 50%, #ffffff 100%)",
+        "linear-red-white":
+          "linear-gradient(200deg, #ffffff 0%, #400040 50%, #ffffff 100%)",
         "linear-dark-blue":
           "linear-gradient(180deg, #000000 0%, #004040 50%, #000000 100%)",
         "linear-indigo":

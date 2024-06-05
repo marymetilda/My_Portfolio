@@ -1,6 +1,4 @@
-// import { Loader } from "@react-three/drei";
 import { ReactNode, useState } from "react";
-import Loader from "./Loader";
 
 interface FlipingCardProps {
   backSideChildren?: ReactNode;
@@ -28,9 +26,25 @@ function FlipingCard({
       <div className="relative preserve-3d group-hover:my-rotate-y-180 w-[15rem] h-[50vh] transition-all duration-1000 bg-linear-blue-white border-2 border-solid border-white-1 rounded-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div className="absolute inset-0 border-2 border-[#057777] w-full h-full rounded-xl bg-linear-blue overflow-hidden">
           {loading ? (
-            <div className="fixed inset-0 z-50 h-full w-full flex items-center justify-center">
-              <Loader />
-            </div>
+            <>
+              <div className="h-full w-full bg-linear-red-white p-6 flex flex-col items-center justify-between">
+                <p className="text-xl font-bold text-transparent bg-clip-text bg-linear-dark-blue">
+                  {title}
+                </p>
+                <p className="text-lg font-normal text-[#ffffff]">
+                  {description}
+                </p>
+                <p className="text-lg font-medium text-transparent bg-clip-text bg-linear-dark-blue">
+                  <a href={projectUrl}>{liveText}</a>
+                </p>
+                {githubText && (
+                  <p className="text-x=lg font-medium text-transparent bg-clip-text bg-linear-dark-blue">
+                    <a href={githubLink}>{githubText}</a>
+                  </p>
+                )}
+              </div>
+              {backSideChildren}
+            </>
           ) : (
             <></>
           )}
