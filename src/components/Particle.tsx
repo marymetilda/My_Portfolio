@@ -1,7 +1,5 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useCallback, useEffect, useState } from "react";
-// import { loadSlim } from "@tsparticles/slim";
-// import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 interface PartcleProps {
